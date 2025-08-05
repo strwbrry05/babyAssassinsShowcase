@@ -1,7 +1,12 @@
+import ManualSwitch from "./components/ManualSwitch";
 import "./index.css";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <ManualSwitch />
+    </>
+  );
 }
 
 export default App;
