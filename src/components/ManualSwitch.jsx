@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ba1 from "../assets/ba1.png";
-import ba2 from "../assets/posters/ba2.png";
-import ba3 from "../assets/posters/ba3.png";
+import ba2 from "../assets/ba2.png";
+import ba3 from "../assets/ba3.png";
 
 const ManualSwitch = () => {
   const moviesObj = [
