@@ -6,7 +6,7 @@ import { FaRegHeart } from "react-icons/fa";
 const Footer = () => {
   return (
     <div
-      className="text-(--color-white) bg-(--color-black) flex flex-col font-(family-name:--font-headings)
+      className="text-(--color-white) bg-(--color-black) flex flex-col font-(family-name:--font-headings) pt-[2em]
     
       md:flex-row md:justify-between md:items-center md:pt-[2em] md:pb-[2em]"
     >
