@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Rubik+Wet+Paint&family=Stylish&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 @import 'tailwindcss';
 
 @theme {
@@ -10,6 +12,11 @@
   --color-BA1-red: #6C1418;
   --color-BA2-blue: #36C0F1;
   --color-BA3-yellow: #FEC700;
+
+  --font-titles: 'Oswald';
+  --font-baby: 'Rubik Wet Paint';
+  --font-text: 'Stylish';
+  --font-headings: 'Ubuntu Mono';
 
 
 }
