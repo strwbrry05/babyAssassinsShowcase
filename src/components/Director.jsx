@@ -5,7 +5,7 @@ const Director = () => {
   return (
     <div className="bg-(--color-dark-blue) text-(--color-white) font-(family-name:--font-text) pt-[2em] pb-[2em]">
       <div
-        className="flex flex-col justify-center items-start
+        className="flex flex-col justify-center items-start uppercase
       lg:flex-row lg:justify-center lg:items-center lg:pr-[32em] lg:mb-[-1.5em]"
       >
         <h2
