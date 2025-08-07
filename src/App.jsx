@@ -1,17 +1,19 @@
 import Director from "./components/Director";
 import Footer from "./components/Footer";
+import LeftCastCard from "./components/LeftCastCard";
 import ManualSwitch from "./components/ManualSwitch";
 import WatchNow from "./components/WatchNow";
 import WatchNowCard from "./components/WatchNowCard";
 import "./index.css";
 
-import ba1 from "./assets/ba1.png";
-import ba2 from "./assets/ba2.png";
-import ba3 from "./assets/ba3.png";
+// import ba1 from "./assets/ba1.png";
+// import ba2 from "./assets/ba2.png";
+// import ba3 from "./assets/ba3.png";
 
 function App() {
   return (
     <>
+      <LeftCastCard />
       <Director />
       <ManualSwitch />
       {/* <WatchNow
