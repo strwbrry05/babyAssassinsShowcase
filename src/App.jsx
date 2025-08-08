@@ -14,20 +14,20 @@ import mahiroBA3 from "./assets/cast/mahiroBA3.png";
 import chisato from "./assets/cast/chisatoBA1.png";
 import chisatoBA2 from "./assets/cast/chisatoBA2.png";
 import chisatoBA3 from "./assets/cast/chisatoBA3.png";
-import susano from "./assets/cast/susano.png";
-import tasaka from "./assets/cast/tasaka.png";
+// import susano from "./assets/cast/susano.png";
+// import tasaka from "./assets/cast/tasaka.png";
 
-import himari from "./assets/cast/himari.png";
-import ippei from "./assets/cast/ippei.png";
-import kazuki from "./assets/cast/kazuki.png";
+// import himari from "./assets/cast/himari.png";
+// import ippei from "./assets/cast/ippei.png";
+// import kazuki from "./assets/cast/kazuki.png";
 
-import makoto from "./assets/cast/makoto.png";
-import miyauchi from "./assets/cast/miyauchi.png";
-import yuri from "./assets/cast/yuri.png";
+// import makoto from "./assets/cast/makoto.png";
+// import miyauchi from "./assets/cast/miyauchi.png";
+// import yuri from "./assets/cast/yuri.png";
 
-import kaede from "./assets/cast/kaede.png";
-import riku from "./assets/cast/riku.png";
-import iruka from "./assets/cast/iruka.png";
+// import kaede from "./assets/cast/kaede.png";
+// import riku from "./assets/cast/riku.png";
+// import iruka from "./assets/cast/iruka.png";
 
 import { useState } from "react";
 
@@ -94,7 +94,7 @@ function App() {
         showSocials={false}
         display={["movie1", "movie2", "movie3"]}
       />
-      <CastCard
+      {/* <CastCard
         flexDirection={"lg:flex-row"}
         justifyIMG={"lg:justify-end"}
         src={[susano, susano, susano]}
@@ -226,7 +226,7 @@ function App() {
         selection={selection}
         showSocials={true}
         display={["", "", "movie3"]}
-      />
+      /> */}
       <Director />
       <ManualSwitch selection={selection} toggleSelection={toggleSelection} />
       {/* <WatchNow
