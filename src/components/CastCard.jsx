@@ -12,11 +12,17 @@ const CastCard = (props) => {
         className={`w-[85%] lg:w-[50%] lg:flex lg:justify-end ${props.justifyIMG}
       md:flex md:justify-center`}
       >
-        <img
-          src={props.src}
-          alt={props.alt}
-          className="md:max-w-[600px] lg:w-[600px]"
-        />
+        {props.selection.map((selected, index) => {
+          if (selected.active === true) {
+            return (
+              <img
+                src={props.src[index]}
+                alt={props.alt}
+                className="md:max-w-[600px] lg:w-[600px]"
+              />
+            );
+          }
+        })}
       </div>
 
       <div
