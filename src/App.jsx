@@ -30,6 +30,7 @@ import chisatoBA3 from "./assets/cast/chisatoBA3.png";
 // import iruka from "./assets/cast/iruka.png";
 
 import { useState } from "react";
+import Gallery from "./components/Gallery";
 
 function App() {
   const moviesObj = [
@@ -70,6 +71,8 @@ function App() {
 
   return (
     <>
+      <Gallery />
+
       <CastCard
         flexDirection={"lg:flex-row"}
         justifyIMG={"lg:justify-end"}
