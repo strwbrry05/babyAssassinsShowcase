@@ -30,6 +30,15 @@ import BA2_img14 from "../assets/gallery/BA2/BA2_img14.png";
 import BA2_img15 from "../assets/gallery/BA2/BA2_img15.png";
 import BA2_img16 from "../assets/gallery/BA2/BA2_img16.png";
 
+import BA3_img1 from "../assets/gallery/BA3/BA3_img1.png";
+import BA3_img2 from "../assets/gallery/BA3/BA3_img2.png";
+import BA3_img3 from "../assets/gallery/BA3/BA3_img3.png";
+import BA3_img4 from "../assets/gallery/BA3/BA3_img4.png";
+import BA3_img5 from "../assets/gallery/BA3/BA3_img5.png";
+import BA3_img6 from "../assets/gallery/BA3/BA3_img6.png";
+import BA3_img7 from "../assets/gallery/BA3/BA3_img7.png";
+import BA3_img8 from "../assets/gallery/BA3/BA3_img8.png";
+
 import { IoDownloadOutline } from "react-icons/io5";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 
@@ -150,6 +159,38 @@ const Gallery = () => {
     {
       src: BA2_img16,
       category: ["none", "BA2"],
+    },
+    {
+      src: BA3_img1,
+      category: ["none", "BA3"],
+    },
+    {
+      src: BA3_img2,
+      category: ["none", "BA3"],
+    },
+    {
+      src: BA3_img3,
+      category: ["none", "BA3"],
+    },
+    {
+      src: BA3_img4,
+      category: ["none", "BA3"],
+    },
+    {
+      src: BA3_img5,
+      category: ["none", "BA3"],
+    },
+    {
+      src: BA3_img6,
+      category: ["none", "BA3"],
+    },
+    {
+      src: BA3_img7,
+      category: ["none", "BA3"],
+    },
+    {
+      src: BA3_img8,
+      category: ["none", "BA3"],
     },
   ];
 
