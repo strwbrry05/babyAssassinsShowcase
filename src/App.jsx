@@ -31,6 +31,7 @@ import chisatoBA3 from "./assets/cast/chisatoBA3.png";
 
 import { useState } from "react";
 import Gallery from "./components/Gallery";
+import Reviews from "./components/Reviews";
 
 function App() {
   const moviesObj = [
@@ -71,7 +72,7 @@ function App() {
 
   return (
     <>
-      <Gallery />
+      {/* <Gallery /> */}
 
       <CastCard
         flexDirection={"lg:flex-row"}
@@ -97,6 +98,8 @@ function App() {
         showSocials={false}
         display={["movie1", "movie2", "movie3"]}
       />
+
+      <Reviews />
       {/* <CastCard
         flexDirection={"lg:flex-row"}
         justifyIMG={"lg:justify-end"}
