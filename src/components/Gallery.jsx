@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import BA1_img1 from "../assets/gallery/BA1_img1.png";
 import BA1_img2 from "../assets/gallery/BA1_img2.png";
 import BA1_img3 from "../assets/gallery/BA1_img3.png";
@@ -20,73 +20,68 @@ const Gallery = () => {
   const imgArr = [
     {
       src: BA1_img1,
-      category: "BA1",
-      isSelected: false,
+      category: ["none", "BA1", "BA2", "BA3"],
     },
     {
       src: BA1_img2,
-      category: "BA1",
-      isSelected: false,
+      category: ["none", "BA1", "BA2", "BA3"],
     },
     {
       src: BA1_img3,
-      category: "BA1",
-      isSelected: false,
+      category: ["none", "BA1", "BA2", "BA3"],
     },
     {
       src: BA1_img4,
-      category: "BA1",
-      isSelected: false,
+      category: ["none", "BA1", "BA2", "BA3"],
     },
     {
       src: BA1_img5,
-      category: "BA1",
-      isSelected: false,
+      category: ["none", "BA1", "BA2", "BA3"],
     },
     {
       src: BA1_img6,
-      category: "BA1",
-      isSelected: false,
+      category: ["none", "BA1", "BA2", "BA3"],
     },
     {
       src: BA1_img7,
-      category: "BA1",
-      isSelected: false,
+      category: ["none", "BA1", "BA2", "BA3"],
     },
     {
       src: BA1_img8,
-      category: "BA1",
-      isSelected: false,
+      category: ["none", "BA1", "BA2", "BA3"],
     },
     {
       src: BA1_img9,
-      category: "BA1",
+      category: ["none", "BA1", "BA2", "BA3"],
     },
-    // {
-    //   src: BA1_img10,
-    //   category: "BA1",
-    // },
-    // {
-    //   src: BA1_img11,
-    //   category: "BA1",
-    // },
-    // {
-    //   src: BA1_img12,
-    //   category: "BA1",
-    // },
-    // {
-    //   src: BA1_img13,
-    //   category: "BA1",
-    // },
+    {
+      src: BA1_img10,
+      category: ["none", "BA1", "BA2", "BA3"],
+    },
+    {
+      src: BA1_img11,
+      category: ["none", "BA1", "BA2", "BA3"],
+    },
+    {
+      src: BA1_img12,
+      category: ["none", "BA1", "BA2", "BA3"],
+    },
+    {
+      src: BA1_img13,
+      category: ["none", "BA1", "BA2", "BA3"],
+    },
   ];
 
+  const [images, setImages] = useState(imgArr);
   const [showImage, setShowImage] = useState([false, null]);
 
   function selectIMG(name) {
-    console.log(showImage);
-
     setShowImage([true, name]);
-    console.log(showImage);
+  }
+
+  function filterIMG(filterValue) {
+    setImages(imgArr.filter((img) => img.category.includes(filterValue)));
+    console.log(filterValue);
   }
 
   return (
@@ -94,16 +89,38 @@ const Gallery = () => {
       className="bg-(--color-black) text-(--color-white) font-(family-name:--font-text) pt-[3em] pb-[3em]
     flex flex-col pl-[2em] pr-[2em] justify-center items-center"
     >
-      <p className="ml-[2em] mb-[1em] w-full">
-        click on an image to enlarge or download
-      </p>
+      <div
+        className="w-[80%] ml-[2em] mb-[1em]
+      flex flex-col 
+      md:flex-row justify-between"
+      >
+        <p className="mb-[1em]">click on an image to enlarge or download</p>
+
+        <form onChange={(e) => filterIMG(e.target.value)}>
+          <label htmlFor="galleryFilter" className="mr-[0.5em]">
+            filter:
+          </label>
+          <select
+            name="galleryFilter"
+            id="galleryFilter"
+            className="border-2 rounded-[5px] bg-(--color-black) cursor-pointer"
+            defaultValue={"none"}
+          >
+            <option value="none">none</option>
+            <option value="BA1">baby assassins</option>
+            <option value="BA2">baby assassins: 2 babies</option>
+            <option value="BA3"> baby assassins: nice days</option>
+          </select>
+        </form>
+      </div>
+
       <div
         className="flex flex-col gap-y-[20px] justify-center items-center
 
       md:flex-row md:flex-wrap md:gap-x-[20px] md:justify-center
       md:max-w-[1360px] "
       >
-        {imgArr.map((image, index) => {
+        {images.map((image, index) => {
           return (
             <div key={index} className="grid grid-rows-3 grid-cols-3">
               <a
