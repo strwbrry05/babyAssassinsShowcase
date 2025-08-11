@@ -1,17 +1,34 @@
-import React, { use, useState } from "react";
-import BA1_img1 from "../assets/gallery/BA1_img1.png";
-import BA1_img2 from "../assets/gallery/BA1_img2.png";
-import BA1_img3 from "../assets/gallery/BA1_img3.png";
-import BA1_img4 from "../assets/gallery/BA1_img4.png";
-import BA1_img5 from "../assets/gallery/BA1_img5.png";
-import BA1_img6 from "../assets/gallery/BA1_img6.png";
-import BA1_img7 from "../assets/gallery/BA1_img7.png";
-import BA1_img8 from "../assets/gallery/BA1_img8.png";
-import BA1_img9 from "../assets/gallery/BA1_img9.png";
-import BA1_img10 from "../assets/gallery/BA1_img10.png";
-import BA1_img11 from "../assets/gallery/BA1_img11.png";
-import BA1_img12 from "../assets/gallery/BA1_img12.png";
-import BA1_img13 from "../assets/gallery/BA1_img13.png";
+import React, { useState } from "react";
+import BA1_img1 from "../assets/gallery/BA1/BA1_img1.png";
+import BA1_img2 from "../assets/gallery/BA1/BA1_img2.png";
+import BA1_img3 from "../assets/gallery/BA1/BA1_img3.png";
+import BA1_img4 from "../assets/gallery/BA1/BA1_img4.png";
+import BA1_img5 from "../assets/gallery/BA1/BA1_img5.png";
+import BA1_img6 from "../assets/gallery/BA1/BA1_img6.png";
+import BA1_img7 from "../assets/gallery/BA1/BA1_img7.png";
+import BA1_img8 from "../assets/gallery/BA1/BA1_img8.png";
+import BA1_img9 from "../assets/gallery/BA1/BA1_img9.png";
+import BA1_img10 from "../assets/gallery/BA1/BA1_img10.png";
+import BA1_img11 from "../assets/gallery/BA1/BA1_img11.png";
+import BA1_img12 from "../assets/gallery/BA1/BA1_img12.png";
+import BA1_img13 from "../assets/gallery/BA1/BA1_img13.png";
+
+import BA2_img1 from "../assets/gallery/BA2/BA2_img1.png";
+import BA2_img2 from "../assets/gallery/BA2/BA2_img2.png";
+import BA2_img3 from "../assets/gallery/BA2/BA2_img3.png";
+import BA2_img4 from "../assets/gallery/BA2/BA2_img4.png";
+import BA2_img5 from "../assets/gallery/BA2/BA2_img5.png";
+import BA2_img6 from "../assets/gallery/BA2/BA2_img6.png";
+import BA2_img7 from "../assets/gallery/BA2/BA2_img7.png";
+import BA2_img8 from "../assets/gallery/BA2/BA2_img8.png";
+import BA2_img9 from "../assets/gallery/BA2/BA2_img9.png";
+import BA2_img10 from "../assets/gallery/BA2/BA2_img10.png";
+import BA2_img11 from "../assets/gallery/BA2/BA2_img11.png";
+import BA2_img12 from "../assets/gallery/BA2/BA2_img12.png";
+import BA2_img13 from "../assets/gallery/BA2/BA2_img13.png";
+import BA2_img14 from "../assets/gallery/BA2/BA2_img14.png";
+import BA2_img15 from "../assets/gallery/BA2/BA2_img15.png";
+import BA2_img16 from "../assets/gallery/BA2/BA2_img16.png";
 
 import { IoDownloadOutline } from "react-icons/io5";
 import { IoMdCloseCircleOutline } from "react-icons/io";
@@ -20,60 +37,133 @@ const Gallery = () => {
   const imgArr = [
     {
       src: BA1_img1,
-      category: ["none", "BA1", "BA2", "BA3"],
+      category: ["none", "BA1"],
     },
     {
       src: BA1_img2,
-      category: ["none", "BA1", "BA2", "BA3"],
+      category: ["none", "BA1"],
     },
     {
       src: BA1_img3,
-      category: ["none", "BA1", "BA2", "BA3"],
+      category: ["none", "BA1"],
     },
     {
       src: BA1_img4,
-      category: ["none", "BA1", "BA2", "BA3"],
+      category: ["none", "BA1"],
     },
     {
       src: BA1_img5,
-      category: ["none", "BA1", "BA2", "BA3"],
+      category: ["none", "BA1"],
     },
     {
       src: BA1_img6,
-      category: ["none", "BA1", "BA2", "BA3"],
+      category: ["none", "BA1"],
     },
     {
       src: BA1_img7,
-      category: ["none", "BA1", "BA2", "BA3"],
+      category: ["none", "BA1"],
     },
     {
       src: BA1_img8,
-      category: ["none", "BA1", "BA2", "BA3"],
+      category: ["none", "BA1"],
     },
     {
       src: BA1_img9,
-      category: ["none", "BA1", "BA2", "BA3"],
+      category: ["none", "BA1"],
     },
     {
       src: BA1_img10,
-      category: ["none", "BA1", "BA2", "BA3"],
+      category: ["none", "BA1"],
     },
     {
       src: BA1_img11,
-      category: ["none", "BA1", "BA2", "BA3"],
+      category: ["none", "BA1"],
     },
     {
       src: BA1_img12,
-      category: ["none", "BA1", "BA2", "BA3"],
+      category: ["none", "BA1"],
     },
     {
       src: BA1_img13,
       category: ["none", "BA1", "BA2", "BA3"],
     },
+    {
+      src: BA2_img1,
+      category: ["none", "BA2"],
+    },
+    {
+      src: BA2_img2,
+      category: ["none", "BA2"],
+    },
+    {
+      src: BA2_img3,
+      category: ["none", "BA2"],
+    },
+    {
+      src: BA2_img4,
+      category: ["none", "BA2"],
+    },
+    {
+      src: BA2_img5,
+      category: ["none", "BA2"],
+    },
+    {
+      src: BA2_img6,
+      category: ["none", "BA2"],
+    },
+    {
+      src: BA2_img7,
+      category: ["none", "BA2"],
+    },
+    {
+      src: BA2_img8,
+      category: ["none", "BA2"],
+    },
+    {
+      src: BA2_img9,
+      category: ["none", "BA2"],
+    },
+    {
+      src: BA2_img10,
+      category: ["none", "BA2"],
+    },
+    {
+      src: BA2_img11,
+      category: ["none", "BA2"],
+    },
+    {
+      src: BA2_img12,
+      category: ["none", "BA2"],
+    },
+    {
+      src: BA2_img13,
+      category: ["none", "BA2"],
+    },
+    {
+      src: BA2_img14,
+      category: ["none", "BA2"],
+    },
+    {
+      src: BA2_img15,
+      category: ["none", "BA2"],
+    },
+    {
+      src: BA2_img16,
+      category: ["none", "BA2"],
+    },
   ];
 
-  const [images, setImages] = useState(imgArr);
+  const [images, setImages] = useState(shuffleArr(imgArr));
   const [showImage, setShowImage] = useState([false, null]);
+
+  function shuffleArr(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
 
   function selectIMG(name) {
     setShowImage([true, name]);
