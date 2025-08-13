@@ -32,6 +32,7 @@ import chisatoBA3 from "./assets/cast/chisatoBA3.png";
 import { useState } from "react";
 import Gallery from "./components/Gallery";
 import Reviews from "./components/Reviews";
+import HomeSlides from "./components/HomeSlides";
 
 function App() {
   const moviesObj = [
@@ -235,6 +236,7 @@ function App() {
       /> */}
       <Director />
       <ManualSwitch selection={selection} toggleSelection={toggleSelection} />
+      <HomeSlides />
       {/* <WatchNow
         poster={ba1}
         stream={["tubi", "pluto tv", "roku", "plex", "hoopla"]}

@@ -101,6 +101,9 @@ const Reviews = (props) => {
     rows: 3,
     slidesPerRow: 1,
     adaptiveHeight: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
     dots: true,
     appendDots: (dots) => (
       <div
