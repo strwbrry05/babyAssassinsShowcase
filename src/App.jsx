@@ -33,6 +33,7 @@ import { useState } from "react";
 import Gallery from "./components/Gallery";
 import Reviews from "./components/Reviews";
 import HomeSlides from "./components/HomeSlides";
+import SynopsisCard from "./components/SynopsisCard";
 
 function App() {
   const moviesObj = [
@@ -73,6 +74,8 @@ function App() {
 
   return (
     <>
+      <SynopsisCard selection={selection} />
+
       {/* <Gallery /> */}
 
       <CastCard
