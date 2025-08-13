@@ -236,7 +236,7 @@ function App() {
       /> */}
       <Director />
       <ManualSwitch selection={selection} toggleSelection={toggleSelection} />
-      <HomeSlides />
+      <HomeSlides selection={selection} />
       {/* <WatchNow
         poster={ba1}
         stream={["tubi", "pluto tv", "roku", "plex", "hoopla"]}
