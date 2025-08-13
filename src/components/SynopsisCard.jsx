@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const SynopsisCard = (props) => {
   const synopsisArr = [
@@ -17,7 +18,7 @@ const SynopsisCard = (props) => {
       title: "movie1",
       summary:
         "Chisato and Mahiro were banned from performing tasks because they violated the organization's rules?! Needing money to make ends meet, they resumed their days as part time workers. The two are busy working to earn money, but they suddenly encounter other assassins who are after them. What should they do if they can't reveal their identity as assassins when they are not on duty?",
-      apiCall: "http://www.omdbapi.com/?t=baby+assassins",
+      apiCall: "http://www.omdbapi.com/?t=baby+assassins%3A+2+babies",
       youtubeSrc: "https://www.youtube.com/watch?v=rvMR90x3T3w",
       websiteSrc: "https://babywalkure.com/",
       bgColor: "bg-(--color-BA1-red)",
@@ -28,7 +29,7 @@ const SynopsisCard = (props) => {
       title: "movie1",
       summary:
         "Teen assassins and BFFs, Chisato and Mahiro head to a coastal resort for a well-deserved vacation when The Agency calls with an assignment -- take out an embezzler. Unfortunately, the gig has been double-booked, and the duo cross paths with an unpredictably vicious freelancer out to add to his personal kill count. What should have been a straightforward mission becomes a test of their friendship and killing skills, as the ruthless killer targets the two young roomies.",
-      apiCall: "http://www.omdbapi.com/?t=baby+assassins",
+      apiCall: "http://www.omdbapi.com/?t=baby+assassins%3A+nice+days",
       youtubeSrc: "https://www.youtube.com/watch?v=gKGRaNzLt8M",
       websiteSrc: "https://babywalkure-nicedays.com/",
       bgColor: "bg-(--color-dark-blue)",
@@ -36,6 +37,37 @@ const SynopsisCard = (props) => {
       btnTextColor: "text-(--color-dark-blue)",
     },
   ];
+
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  const [apiCall, setApiCall] = useState(synopsisArr[0].apiCall);
+
+  useEffect(() => {
+    props.selection.map((selected, index) => {
+      if (selected.active === true) {
+        return setApiCall(synopsisArr[index].apiCall);
+      }
+    });
+
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(
+          `${apiCall}&apikey=${import.meta.env.VITE_OMDB_API_KEY}`
+        );
+        setData(res.data);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [props.selection, apiCall]);
+
+  if (error) return <div>error fetching data! check again soon!</div>;
 
   return props.selection.map((selected, index) => {
     if (selected.active === true) {
@@ -51,16 +83,32 @@ const SynopsisCard = (props) => {
           <div className="md:max-w-[600px]">
             <p className="text-[1.15rem]">{synopsisArr[index].summary}</p>
             <div className="flex justify-between items-center mb-[2em] mt-[2em]">
-              <p>
-                Released: 10 Nov 2021 <br /> RunTime: 95 mins <br />
-                Genre: Action, Comedy
-                <br />
-                Director: Yugo Sakamoto
-              </p>
-              <p>
-                Ratings <br /> Rotten Tomatoes: 100% <br />
-                IMDB: 6.4
-              </p>
+              {loading ? (
+                <>
+                  <div>Loading...</div>
+                </>
+              ) : (
+                <>
+                  <p>
+                    Released: {data.Released} <br /> RunTime: {data.Runtime}
+                    <br />
+                    Genre: {data.Genre}
+                    <br />
+                    Director: {data.Director}
+                  </p>
+                  <p>
+                    Ratings <br />
+                    {data.Ratings.map((rating, i) => {
+                      return (
+                        <span key={i}>
+                          {rating.Source} : {rating.Value}
+                          <br />
+                        </span>
+                      );
+                    })}
+                  </p>
+                </>
+              )}
             </div>
           </div>
 
