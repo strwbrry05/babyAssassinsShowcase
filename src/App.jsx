@@ -99,7 +99,7 @@ function App() {
         display={["movie1", "movie2", "movie3"]}
       />
 
-      <Reviews />
+      <Reviews selection={selection} />
       {/* <CastCard
         flexDirection={"lg:flex-row"}
         justifyIMG={"lg:justify-end"}
