@@ -19,7 +19,8 @@ const Hero = (props) => {
     },
     {
       src: heroBA3,
-      bgColor: "bg-(--color-title-red)",
+      bgColor:
+        "bg-(--color-title-red) bg-gradient-to-r from-red-750 from-29% via-red-500 via-54% to-red-800 to-80%",
       babyColor: "text-(--color-BA3-yellow)",
       subtitle: "nice days",
     },
@@ -38,7 +39,7 @@ const Hero = (props) => {
       return (
         <div
           className={`pt-[5em] flex flex-col justify-center items-center 
-    ${heroArr[index].bgColor}`}
+    ${heroArr[index].bgColor} `}
         >
           <img
             src={heroArr[index].src}
