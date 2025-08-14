@@ -35,6 +35,7 @@ import Reviews from "./components/Reviews";
 import HomeSlides from "./components/HomeSlides";
 import SynopsisCard from "./components/SynopsisCard";
 import Hero from "./components/Hero";
+import Navigation from "./components/Navigation";
 
 function App() {
   const moviesObj = [
@@ -75,6 +76,7 @@ function App() {
 
   return (
     <>
+      <Navigation />
       <Hero selection={selection} toggleSelection={toggleSelection} />
       <SynopsisCard selection={selection} />
 

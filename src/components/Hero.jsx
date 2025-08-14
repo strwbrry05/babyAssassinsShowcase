@@ -38,7 +38,7 @@ const Hero = (props) => {
     if (selected.active === true) {
       return (
         <div
-          className={`pt-[5em] flex flex-col justify-center items-center 
+          className={`pt-[5em] flex flex-col justify-center items-center overflow-x-hidden overflow-y-hidden
     ${heroArr[index].bgColor} `}
         >
           <img
