@@ -55,7 +55,8 @@ const Hero = (props) => {
           >
             <div
               className="h-full flex justify-center items-center
-        flex-col cursor-pointer"
+        flex-col cursor-pointer hover:scale-102 
+        translate-1 transition-transform duration-500 ease-linear"
               onClick={() => toggleEverything(index)}
             >
               <p
