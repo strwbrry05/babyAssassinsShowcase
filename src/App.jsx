@@ -76,7 +76,9 @@ function App() {
 
   return (
     <>
-      <Navigation />
+      <div className="sticky top-0 w-full z-5">
+        <Navigation />
+      </div>
       <Hero selection={selection} toggleSelection={toggleSelection} />
       <SynopsisCard selection={selection} />
 
