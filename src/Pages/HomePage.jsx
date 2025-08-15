@@ -7,6 +7,8 @@ import Director from "../components/Director";
 import ManualSwitch from "../components/ManualSwitch";
 import HomeSlides from "../components/HomeSlides";
 
+import { Element } from "react-scroll";
+
 import mahiro from "../assets/cast/mahiroBA1.png";
 import mahiroBA2 from "../assets/cast/mahiroBA2.png";
 import mahiroBA3 from "../assets/cast/mahiroBA3.png";

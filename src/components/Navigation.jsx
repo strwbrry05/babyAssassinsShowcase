@@ -1,6 +1,8 @@
 import { nanoid } from "nanoid";
 import React, { useEffect, useRef, useState } from "react";
 import { MdMenuOpen } from "react-icons/md";
+import { NavLink } from "react-router";
+import { Link } from "react-scroll";
 
 const Navigation = (props) => {
   const [mobileActive, setMobileActive] = useState(false);
@@ -14,7 +16,8 @@ const Navigation = (props) => {
   ];
 
   function toggleMobileMenu() {
-    setMobileActive(!mobileActive);
+    setMobileActive((prev) => !prev);
+    console.log(mobileActive);
   }
 
   // hide menu if window size is larger than md screen
@@ -30,11 +33,12 @@ const Navigation = (props) => {
     hideMenu();
 
     return () => window.removeEventListener("resize", hideMenu);
-  }, [hitbox, mobileActive, windowSize]);
+  }, [mobileActive, windowSize]);
 
   // hide menu if hit outside of hitbox
   useEffect(() => {
     const clickOutside = (e) => {
+      console.log(e.target);
       if (hitbox.current && !hitbox.current.contains(e.target)) {
         console.log("hit outside");
         setMobileActive(false);
@@ -48,44 +52,59 @@ const Navigation = (props) => {
     };
   }, [hitbox, mobileActive]);
 
+  function handleTitleClick() {
+    window.scrollTo(0, 0);
+    setMobileActive(false);
+  }
+
   return (
-    <>
+    <div ref={hitbox}>
       <div
         ref={hitbox}
         className="sticky z-5 w-[full] h-[75px] bg-(--color-black)
     flex justify-center items-center"
       >
-        <div className="flex items-center justify-center gap-x-[20px]">
+        <div className="z-5 flex items-center justify-center gap-x-[20px]">
           <MdMenuOpen
-            className={`text-(--color-white) text-[2.5rem] rotate-270 cursor-pointer
+            className={`text-(--color-white) text-[2.5rem] rotate-90 cursor-pointer
             ${
               mobileActive
-                ? " transition-transform duration-300 ease-in -rotate-160"
-                : "transition-all duration-300 ease-in rotate-450 "
+                ? " transition-all duration-400 ease-in -rotate-270"
+                : "transition-all duration-300 ease-in rotate-270 "
             }
             md:hidden`}
             onClick={toggleMobileMenu}
           />
 
           <div className="hidden md:block md:flex flex-row  w-[250px] justify-between">
-            <h2
-              className=" text-(--color-white) font-(family-name:--font-titles) uppercase text-[1.15rem]
-            cursor-pointer ml-[2.5em]"
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-(--color-white) font-(family-name:--font-titles) uppercase text-[1.15rem] ml-[2.5em] cursor-pointer"
+                  : "text-(--color-gray) font-(family-name:--font-titles) uppercase text-[1.15rem] ml-[2.5em] cursor-pointer"
+              }
             >
               Home
-            </h2>
-            <h2
-              className=" text-(--color-gray) font-(family-name:--font-titles) uppercase text-[1.15rem] mr-[2.5em]
-            cursor-pointer"
+            </NavLink>
+            <NavLink
+              to="/cast"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-(--color-white) font-(family-name:--font-titles) uppercase text-[1.15rem] mr-[2.5em] cursor-pointer"
+                  : "text-(--color-gray) font-(family-name:--font-titles) uppercase text-[1.15rem] mr-[2.5em] cursor-pointer"
+              }
             >
               Cast
-            </h2>
+            </NavLink>
           </div>
 
-          <h1
+          <NavLink
+            to="/"
             className="flex flex-col justify-center items-center  
         text-(--color-white) font-(family-name:--font-titles) font-bold
         text-[1.5rem] uppercase cursor-pointer"
+            onClick={() => handleTitleClick()}
           >
             {props.selection.map((selected, index) => {
               if (selected.active === true) {
@@ -101,21 +120,29 @@ const Navigation = (props) => {
             })}
 
             <div>assassins</div>
-          </h1>
+          </NavLink>
 
           <div className="hidden md:block md:flex w-[250px] justify-between ">
-            <h2
-              className=" text-(--color-gray) font-(family-name:--font-titles) uppercase text-[1.15rem]
-            ml-[2.5em] cursor-pointer"
+            <NavLink
+              to="/gallery"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-(--color-white) font-(family-name:--font-titles) uppercase text-[1.15rem] ml-[2.5em] cursor-pointer"
+                  : "text-(--color-gray) font-(family-name:--font-titles) uppercase text-[1.15rem] ml-[2.5em] cursor-pointer"
+              }
             >
               Gallery
-            </h2>
-            <h2
-              className=" text-(--color-gray) font-(family-name:--font-titles) uppercase text-[1.15rem]
-            cursor-pointer"
+            </NavLink>
+            <NavLink
+              to="/watch"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-(--color-white) font-(family-name:--font-titles) uppercase text-[1.15rem] cursor-pointer"
+                  : "text-(--color-gray) font-(family-name:--font-titles) uppercase text-[1.15rem] cursor-pointer"
+              }
             >
               Watch Now
-            </h2>
+            </NavLink>
           </div>
 
           <MdMenuOpen
@@ -137,17 +164,49 @@ const Navigation = (props) => {
         shadow-[0_3px_3px_rgba(0,0,0,0.5)]`}
       >
         <ul className="flex justify-center items-center flex-col pt-[2em] pb-[2em]">
-          <li className="mb-[2em] cursor-pointer text-(--color-white)">Home</li>
-          <li className="mb-[2em] cursor-pointer text-(--color-gray)">cast</li>
-          <li className="mb-[2em] cursor-pointer text-(--color-gray)">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive
+                ? "text-(--color-white) font-(family-name:--font-titles) uppercase mb-[2em] cursor-pointer"
+                : "text-(--color-gray) font-(family-name:--font-titles) uppercase mb-[2em] cursor-pointer"
+            }
+          >
+            Home
+          </NavLink>
+          <NavLink
+            to="/cast"
+            className={({ isActive }) =>
+              isActive
+                ? "text-(--color-white) font-(family-name:--font-titles) uppercase mb-[2em] cursor-pointer"
+                : "text-(--color-gray) font-(family-name:--font-titles) uppercase mb-[2em] cursor-pointer"
+            }
+          >
+            cast
+          </NavLink>
+          <NavLink
+            to="/gallery"
+            className={({ isActive }) =>
+              isActive
+                ? "text-(--color-white) font-(family-name:--font-titles) uppercase mb-[2em] cursor-pointer"
+                : "text-(--color-gray) font-(family-name:--font-titles) uppercase mb-[2em] cursor-pointer"
+            }
+          >
             gallery
-          </li>
-          <li className="mb-[2em] cursor-pointer text-(--color-gray)">
+          </NavLink>
+          <NavLink
+            to="/watch"
+            className={({ isActive }) =>
+              isActive
+                ? "text-(--color-white) font-(family-name:--font-titles) uppercase mb-[2em] cursor-pointer"
+                : "text-(--color-gray) font-(family-name:--font-titles) uppercase mb-[2em] cursor-pointer"
+            }
+          >
             watch now
-          </li>
+          </NavLink>
         </ul>
       </div>
-    </>
+    </div>
   );
 };
 
