@@ -1,3 +1,4 @@
+import { nanoid } from "nanoid";
 import React, { useEffect, useRef, useState } from "react";
 import { MdMenuOpen } from "react-icons/md";
 
@@ -90,6 +91,7 @@ const Navigation = (props) => {
               if (selected.active === true) {
                 return (
                   <div
+                    key={nanoid()}
                     className={`font-(family-name:--font-baby) ${babyColors[index]} -skew-7 mb-[-0.65em]`}
                   >
                     baby

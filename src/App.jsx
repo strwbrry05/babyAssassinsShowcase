@@ -8,12 +8,6 @@ import ba1 from "./assets/ba1.png";
 import ba2 from "./assets/ba2.png";
 import ba3 from "./assets/ba3.png";
 
-import mahiro from "./assets/cast/mahiroBA1.png";
-import mahiroBA2 from "./assets/cast/mahiroBA2.png";
-import mahiroBA3 from "./assets/cast/mahiroBA3.png";
-import chisato from "./assets/cast/chisatoBA1.png";
-import chisatoBA2 from "./assets/cast/chisatoBA2.png";
-import chisatoBA3 from "./assets/cast/chisatoBA3.png";
 // import susano from "./assets/cast/susano.png";
 // import tasaka from "./assets/cast/tasaka.png";
 
@@ -33,9 +27,10 @@ import { useState } from "react";
 import Gallery from "./components/Gallery";
 import Reviews from "./components/Reviews";
 import HomeSlides from "./components/HomeSlides";
-import SynopsisCard from "./components/SynopsisCard";
-import Hero from "./components/Hero";
 import Navigation from "./components/Navigation";
+import { Route, Routes } from "react-router";
+import MainLayout from "./Layouts/MainLayout";
+import HomePage from "./Pages/HomePage";
 
 function App() {
   const moviesObj = [
@@ -76,40 +71,26 @@ function App() {
 
   return (
     <>
-      <div className="sticky top-0 w-full z-5">
+      <Routes>
+        <Route element={<MainLayout selection={selection} />}>
+          <Route
+            index
+            element={
+              <HomePage
+                selection={selection}
+                toggleSelection={toggleSelection}
+              />
+            }
+          />
+        </Route>
+      </Routes>
+
+      {/* <div className="sticky top-0 w-full z-5">
         <Navigation selection={selection} />
-      </div>
-      <Hero selection={selection} toggleSelection={toggleSelection} />
-      <SynopsisCard selection={selection} />
+      </div> */}
 
       {/* <Gallery /> */}
 
-      <CastCard
-        flexDirection={"lg:flex-row"}
-        justifyIMG={"lg:justify-end"}
-        src={[mahiro, mahiroBA2, mahiroBA3]}
-        alt={"saori izawa"}
-        character={"mahiro"}
-        actor={"Saori Izawa"}
-        blurb={`Izawa Saori is a Japanese stuntwoman who began to work as an actress in 2021 with "The Janitor" being her first major appearance. She's done stunt work for "RE:BORN" (2016), "KINGDOM" (2019), "Rurouni Kenshin: The Beginning" (2021), and "Rurouni Kenshin: The Final" (2021).`}
-        selection={selection}
-        showSocials={false}
-        display={["movie1", "movie2", "movie3"]}
-      />
-      <CastCard
-        flexDirection={"lg:flex-row-reverse"}
-        justifyIMG={"lg:justify-start"}
-        src={[chisato, chisatoBA2, chisatoBA3]}
-        alt={"Akari Takaishi"}
-        character={"Chisato"}
-        actor={"Akari Takaishi"}
-        blurb={`Takaishi Akari is a Japanese actress represented by Avex Management under the acting division. She debuted as a stage actress in 2016, with "~Anecdote of Mermaid~". She began acting in smaller roles for movies in 2017, and in television in 2020 along with commercials and music videos.`}
-        selection={selection}
-        showSocials={false}
-        display={["movie1", "movie2", "movie3"]}
-      />
-
-      <Reviews selection={selection} />
       {/* <CastCard
         flexDirection={"lg:flex-row"}
         justifyIMG={"lg:justify-end"}
@@ -243,9 +224,7 @@ function App() {
         showSocials={true}
         display={["", "", "movie3"]}
       /> */}
-      <Director />
-      <ManualSwitch selection={selection} toggleSelection={toggleSelection} />
-      <HomeSlides selection={selection} />
+
       {/* <WatchNow
         poster={ba1}
         stream={["tubi", "pluto tv", "roku", "plex", "hoopla"]}
@@ -272,7 +251,6 @@ function App() {
       />
       <WatchNow poster={ba3} buy={"Buy Bluray on August 26 2025"} /> */}
       {/* <WatchNowCard /> */}
-      <Footer />
     </>
   );
 }

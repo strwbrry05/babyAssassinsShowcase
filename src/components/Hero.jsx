@@ -2,6 +2,7 @@ import React from "react";
 import heroBA1 from "../assets/hero_BA1.png";
 import heroBA2 from "../assets/hero_BA2.png";
 import heroBA3 from "../assets/hero_BA3.png";
+import { nanoid } from "nanoid";
 
 const Hero = (props) => {
   const heroArr = [
@@ -38,6 +39,7 @@ const Hero = (props) => {
     if (selected.active === true) {
       return (
         <div
+          key={nanoid()}
           className={`pt-[5em] flex flex-col justify-center items-center overflow-x-hidden overflow-y-hidden
     ${heroArr[index].bgColor} `}
         >
