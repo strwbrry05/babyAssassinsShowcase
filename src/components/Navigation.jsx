@@ -66,10 +66,10 @@ const Navigation = (props) => {
             onClick={toggleMobileMenu}
           />
 
-          <div className="hidden md:block md:flex flex-row w-[250px] justify-between">
+          <div className="hidden md:block md:flex flex-row  w-[250px] justify-between">
             <h2
               className=" text-(--color-white) font-(family-name:--font-titles) uppercase text-[1.15rem]
-            cursor-pointer"
+            cursor-pointer ml-[2.5em]"
             >
               Home
             </h2>
@@ -101,7 +101,7 @@ const Navigation = (props) => {
             <div>assassins</div>
           </h1>
 
-          <div className="hidden md:block md:flex w-[250px] justify-between">
+          <div className="hidden md:block md:flex w-[250px] justify-between ">
             <h2
               className=" text-(--color-gray) font-(family-name:--font-titles) uppercase text-[1.15rem]
             ml-[2.5em] cursor-pointer"

@@ -150,7 +150,7 @@ const SynopsisCard = (props) => {
           </div>
 
           {showTrailer[0] && (
-            <div className="z-1 fixed top-[0px] left-[-0.5px] size-full bg-(--color-black) flex flex-col justify-center items-center overflow-y-hidden">
+            <div className="z-6 fixed top-[0px] left-[-0.5px] size-full bg-(--color-black) flex flex-col justify-center items-center overflow-y-hidden">
               <div className="flex justify-between items-center w-[350px] sm:w-[500px] md:w-[600px] mb-[0.5em]">
                 <p>press play to watch trailer</p>
                 <button className="cursor-pointer ">
