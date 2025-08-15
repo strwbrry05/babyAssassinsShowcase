@@ -279,7 +279,7 @@ const Gallery = () => {
         })}
       </div>
       {showImage[0] && (
-        <div className="z-1 fixed top-0 size-full bg-(--color-black) flex flex-col justify-center items-center overflow-y-hidden">
+        <div className="z-6 fixed top-0 size-full bg-(--color-black) flex flex-col justify-center items-center overflow-y-hidden">
           <button className="cursor-pointer w-[320px] md:w-[500px] mb-[0.5em]">
             <IoMdCloseCircleOutline
               className="text-[2.25em] justify-self-end"

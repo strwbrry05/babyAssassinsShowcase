@@ -38,7 +38,6 @@ const Navigation = (props) => {
   // hide menu if hit outside of hitbox
   useEffect(() => {
     const clickOutside = (e) => {
-      console.log(e.target);
       if (hitbox.current && !hitbox.current.contains(e.target)) {
         console.log("hit outside");
         setMobileActive(false);
