@@ -1,10 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import { MdMenuOpen } from "react-icons/md";
 
-const Navigation = () => {
+const Navigation = (props) => {
   const [mobileActive, setMobileActive] = useState(false);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
   const hitbox = useRef(null);
+
+  const babyColors = [
+    "text-(--color-title-red)",
+    "text-(--color-title-red)",
+    "text-(--color-BA3-yellow)",
+  ];
 
   function toggleMobileMenu() {
     setMobileActive(!mobileActive);
@@ -80,9 +86,18 @@ const Navigation = () => {
         text-(--color-white) font-(family-name:--font-titles) font-bold
         text-[1.5rem] uppercase cursor-pointer"
           >
-            <div className="font-(family-name:--font-baby) text-(--color-title-red) -skew-7 mb-[-0.65em]">
-              baby
-            </div>
+            {props.selection.map((selected, index) => {
+              if (selected.active === true) {
+                return (
+                  <div
+                    className={`font-(family-name:--font-baby) ${babyColors[index]} -skew-7 mb-[-0.65em]`}
+                  >
+                    baby
+                  </div>
+                );
+              }
+            })}
+
             <div>assassins</div>
           </h1>
 
