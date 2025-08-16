@@ -11,6 +11,7 @@ import HomePage from "./Pages/HomePage";
 import CastPage from "./Pages/CastPage";
 import GalleryPage from "./Pages/GalleryPage";
 import WatchPage from "./Pages/WatchPage";
+import AutoScrollToTop from "./components/AutoScrollToTop";
 
 function App() {
   const moviesObj = [
@@ -51,6 +52,7 @@ function App() {
 
   return (
     <>
+      <AutoScrollToTop />
       <Routes>
         <Route element={<MainLayout selection={selection} />}>
           <Route

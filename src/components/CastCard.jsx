@@ -2,6 +2,7 @@ import React from "react";
 import { LuInstagram } from "react-icons/lu";
 import { FaTwitter } from "react-icons/fa";
 import { nanoid } from "nanoid";
+import { Link } from "react-router";
 
 const CastCard = (props) => {
   return props.selection.map((selected, index) => {
@@ -56,15 +57,17 @@ const CastCard = (props) => {
                 <FaTwitter className="cursor-pointer" />
               </div>
             ) : (
-              <button
-                className="bg-(--color-title-red) w-[100px] h-[35px] 
+              <Link to="/cast">
+                <button
+                  className="bg-(--color-title-red) w-[100px] h-[35px] 
         rounded-[10px] text-[1.15rem] mt-[1em] active:text-(--color-gray)
         active:bg-(--color-BA1-red) cursor-pointer
         
         lg:text-[1.25rem] lg:w-[150px]"
-              >
-                see more
-              </button>
+                >
+                  see more
+                </button>
+              </Link>
             )}
           </div>
         </div>
