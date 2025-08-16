@@ -15,10 +15,14 @@ const Footer = () => {
 
         <div className="flex m-auto justify-center ">
           <div className="bg-(--color-title-red) p-[0.75em] mr-[1em] rounded-[5px] cursor-pointer">
-            <LuGithub className="text-[1.75em]" />
+            <a href={import.meta.env.VITE_GITHUB_LINK} target="_blank">
+              <LuGithub className="text-[1.75em]" />
+            </a>
           </div>
           <div className="bg-(--color-title-red) p-[0.75em] mr-[1em] rounded-[5px] cursor-pointer">
-            <LuLinkedin className="text-[1.75em]" />
+            <a href={import.meta.env.VITE_LINKEDIN_LINK} target="_blank">
+              <LuLinkedin className="text-[1.75em]" />
+            </a>
           </div>
           <div className="bg-(--color-title-red) p-[0.75em] rounded-[5px] cursor-pointer">
             <FaRegHeart className="text-[1.75em]" />
