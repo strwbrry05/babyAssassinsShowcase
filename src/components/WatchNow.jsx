@@ -24,14 +24,16 @@ const WatchNow = (props) => {
               <div className="mt-[0.5em] flex flex-wrap gap-[10px]">
                 {props.stream.map((service, index) => {
                   return (
-                    <div
-                      key={index}
-                      className="border-(--color-title-red) border-2 w-[100px] rounded-[50px] h-[30px] 
+                    <a href={service[1]} target="_blank">
+                      <div
+                        key={index}
+                        className="border-(--color-title-red) border-2 w-[100px] rounded-[50px] h-[30px] 
               text-(--color-gray) hover:text-(--color-white) text-[0.85rem]
-            flex justify-center items-center cursor-pointer"
-                    >
-                      {service}
-                    </div>
+            flex justify-center items-center cursor-pointer active:bg-(--color-BA1-red)"
+                      >
+                        {service[0]}
+                      </div>
+                    </a>
                   );
                 })}
               </div>
@@ -47,14 +49,16 @@ const WatchNow = (props) => {
             <div className="mt-[0.5em] flex flex-wrap gap-[10px]">
               {props.rent.map((service, index) => {
                 return (
-                  <div
-                    key={index}
-                    className="border-(--color-title-red) border-2 w-[100px] rounded-[50px] h-[30px] 
+                  <a href={service[1]} target="_blank">
+                    <div
+                      key={index}
+                      className="border-(--color-title-red) border-2 w-[100px] rounded-[50px] h-[30px] 
               text-(--color-gray) hover:text-(--color-white) text-[0.85rem]
             flex justify-center items-center cursor-pointer"
-                  >
-                    {service}
-                  </div>
+                    >
+                      {service[0]}
+                    </div>
+                  </a>
                 );
               })}
             </div>
