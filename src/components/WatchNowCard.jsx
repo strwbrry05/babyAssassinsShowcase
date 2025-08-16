@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const WatchNowCard = () => {
   return (
@@ -27,9 +28,12 @@ const WatchNowCard = () => {
         className="flex justify-center items-center bg-(--color-title-red) text-(--color-white) w-[250px] h-[55px] text-center rounded-[7px]
       hover:shadow-[0px_0px_35px_rgba(216,33,33,1)] cursor-pointer hover:scale-[1.05]"
       >
-        <p className="font-(family-name:--font-headings) font-bold text-[1.5rem] tracking-tight">
+        <Link
+          to="/watch"
+          className="font-(family-name:--font-headings) font-bold text-[1.5rem] tracking-tight"
+        >
           find out where
-        </p>
+        </Link>
       </div>
     </div>
   );
