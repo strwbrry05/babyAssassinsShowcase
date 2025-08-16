@@ -53,8 +53,16 @@ const CastCard = (props) => {
             <p className="xl:text-[1.15rem]">{props.blurb}</p>
             {props.showSocials ? (
               <div className="flex gap-x-[10px] mt-[0.5em] text-[2rem]">
-                <LuInstagram className="cursor-pointer" />
-                <FaTwitter className="cursor-pointer" />
+                {props.insta && (
+                  <a href={props.insta} target="_blank">
+                    <LuInstagram className="cursor-pointer" />
+                  </a>
+                )}
+                {props.twt && (
+                  <a href={props.twt} target="_blank">
+                    <FaTwitter className="cursor-pointer" />
+                  </a>
+                )}
               </div>
             ) : (
               <Link to="/cast">

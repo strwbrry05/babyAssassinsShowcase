@@ -63,6 +63,8 @@ const CastPage = (props) => {
           blurb={`Izawa Saori is a Japanese stuntwoman who began to work as an actress in 2021 with "The Janitor" being her first major appearance. She's done stunt work for "RE:BORN" (2016), "KINGDOM" (2019), "Rurouni Kenshin: The Beginning" (2021), and "Rurouni Kenshin: The Final" (2021).`}
           selection={props.selection}
           showSocials={true}
+          insta={"https://www.instagram.com/p/DMUAF3Uz1R6/"}
+          twt={"https://x.com/izwsaori?lang=en"}
           display={["movie1", "movie2", "movie3"]}
         />
       </Element>
@@ -77,6 +79,8 @@ const CastPage = (props) => {
         blurb={`Takaishi Akari is a Japanese actress represented by Avex Management under the acting division. She debuted as a stage actress in 2016, with "~Anecdote of Mermaid~". She began acting in smaller roles for movies in 2017, and in television in 2020 along with commercials and music videos.`}
         selection={props.selection}
         showSocials={true}
+        insta={"https://www.instagram.com/p/DM2ujfJB56k/"}
+        twt={"https://x.com/takaishi__akari"}
         display={["movie1", "movie2", "movie3"]}
       />
       <CastCard
@@ -89,6 +93,7 @@ const CastPage = (props) => {
         blurb={`Tsubasa Tobinaga is known for Baby Walkure Everyday! (2024), Kanpai Senshi After V (2014) and Wotakoi: Love Is Hard for Otaku (2020).`}
         selection={props.selection}
         showSocials={true}
+        twt={"https://x.com/tobinaga"}
         display={["movie1", "movie2", "movie3"]}
       />
       <CastCard
@@ -101,6 +106,8 @@ const CastPage = (props) => {
         blurb={`Mizuishi Atomu; born January 1, 1996), is a Japanese actor represented by STRAIGHT entertainment. In 2012 he made his debut as an actor portraying Renji Yanagi in Prince of Tennis 2nd season.`}
         selection={props.selection}
         showSocials={true}
+        insta={"https://www.instagram.com/atom_mizuishi/"}
+        twt={"https://x.com/atom_mizuishi"}
         display={["movie1", "movie2", "movie3"]}
       />
       <CastCard
@@ -137,6 +144,8 @@ const CastPage = (props) => {
         blurb={`Satoshi Uekiya is a Japanese actor who portrays Kirito Asari/Kamen Rider Turbon in Kamen Rider Geats. His hobbies are drinking and drawing, with specialities in drawing and making people laugh.`}
         selection={props.selection}
         showSocials={true}
+        insta={"https://www.instagram.com/uekiyasatoshi/"}
+        twt={"https://x.com/satoshiuekiya"}
         display={["movie1"]}
       />
       <CastCard
@@ -149,6 +158,8 @@ const CastPage = (props) => {
         blurb={`Tomo Nakai is known for Call Me by No Name (2025), Time Traveler's Disease (2024) and Baby Assassins: Nice Days (2024).`}
         selection={props.selection}
         showSocials={true}
+        insta={"https://www.instagram.com/youwang16/"}
+        twt={"https://x.com/tomo_nakai_tc"}
         display={["", "movie2", "movie3"]}
       />
       <CastCard
@@ -161,6 +172,8 @@ const CastPage = (props) => {
         blurb={`Tatsuomi Hamada is a Japanese actor represented by TakeOff and Four Springs. As a child actor, Hamada played the role of Sakamoto Ryōma as a child in Ryōmaden and Hiroshi Ichikawa in Kaibutsu-kun. He won the 2010 Gold Dream Award in October 2010.`}
         selection={props.selection}
         showSocials={true}
+        insta={"https://www.instagram.com/hamatatsu_0827_official/"}
+        twt={"http://x.com/hamatatsu_0827"}
         display={["", "movie2"]}
       />
       <CastCard
@@ -173,6 +186,8 @@ const CastPage = (props) => {
         blurb={`Joey Iwanaga is known for Lion-Girl (2023), Rurouni Kenshin: Final Chapter Part I - The Final (2021) and Muga Shozoku (2015). He was a member of Small but BIG 4 and TOPS under Johnny's Entertainment. He also worked as a backing dancer for Akanishi Jin.`}
         selection={props.selection}
         showSocials={true}
+        insta={"https://www.instagram.com/joeyiwanaga/"}
+        twt={"https://x.com/joeyiwanaga"}
         display={["", "movie2"]}
       />
       <CastCard
@@ -197,6 +212,7 @@ const CastPage = (props) => {
         blurb={`Mondo Otani is an actor. In the movie Baby Assassins: Nice Days, Otani plays the character Riku Nanase and uses a Serbu Super Shorty. Taekwondodata.com ranks Otani 11,344th with 23 points, based on participation in four international tournaments.`}
         selection={props.selection}
         showSocials={true}
+        insta={"https://www.instagram.com/mondo0718/"}
         display={["", "", "movie3"]}
       />
 
@@ -210,6 +226,7 @@ const CastPage = (props) => {
         blurb={`Atsuko Maeda is a Japanese actress and singer. She is a former member of the idol girl group AKB48, and was one of the most prominent members in the group at the time, regarded as the group's "absolute ace", "immovable center", and the "Face of AKB.`}
         selection={props.selection}
         showSocials={true}
+        insta={"https://www.instagram.com/atsuko_maeda_official/"}
         display={["", "", "movie3"]}
       />
 
