@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Element, Link } from "react-scroll";
+import ScrollToTop from "../components/ScrollToTop";
+
 import Hero from "../components/Hero";
 import SynopsisCard from "../components/SynopsisCard";
 import CastCard from "../components/CastCard";
@@ -6,8 +9,6 @@ import Reviews from "../components/Reviews";
 import Director from "../components/Director";
 import ManualSwitch from "../components/ManualSwitch";
 import HomeSlides from "../components/HomeSlides";
-
-import { Element } from "react-scroll";
 
 import mahiro from "../assets/cast/mahiroBA1.png";
 import mahiroBA2 from "../assets/cast/mahiroBA2.png";
@@ -18,12 +19,35 @@ import chisatoBA2 from "../assets/cast/chisatoBA2.png";
 import chisatoBA3 from "../assets/cast/chisatoBA3.png";
 
 const HomePage = (props) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log(window.scrollY);
+
+      if (window.scrollY > 700) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <Hero
-        selection={props.selection}
-        toggleSelection={props.toggleSelection}
-      />
+      <Element name="hero">
+        <Hero
+          selection={props.selection}
+          toggleSelection={props.toggleSelection}
+        />
+      </Element>
+
       <SynopsisCard selection={props.selection} />
 
       <CastCard
@@ -62,6 +86,19 @@ const HomePage = (props) => {
       />
 
       <HomeSlides selection={props.selection} />
+
+      <Link
+        to="hero"
+        smooth={true}
+        offset={-100}
+        className={`z-99 fixed bottom-10 cursor-pointer ${
+          isVisible ? "block" : "hidden"
+        } `}
+      >
+        <div>
+          <ScrollToTop />
+        </div>
+      </Link>
     </>
   );
 };

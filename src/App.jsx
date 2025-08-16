@@ -1,9 +1,4 @@
-import Director from "./components/Director";
-import Footer from "./components/Footer";
-import CastCard from "./components/CastCard";
-import ManualSwitch from "./components/ManualSwitch";
 import "./index.css";
-import ScrollToTop from "./components/ScrollToTop.jsx";
 
 import ba1 from "./assets/ba1.png";
 import ba2 from "./assets/ba2.png";

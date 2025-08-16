@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Element, Link } from "react-scroll";
+import ScrollToTop from "../components/ScrollToTop";
 import CastCard from "../components/CastCard";
+
 import ManualSwitch from "../components/ManualSwitch";
 import WatchNowCard from "../components/WatchNowCard.jsx";
 
@@ -27,20 +30,42 @@ import chisatoBA2 from "../assets/cast/chisatoBA2.png";
 import chisatoBA3 from "../assets/cast/chisatoBA3.png";
 
 const CastPage = (props) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      console.log(window.scrollY);
+
+      if (window.scrollY > 700) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
-      <CastCard
-        flexDirection={"lg:flex-row"}
-        justifyIMG={"lg:justify-end"}
-        src={[mahiro, mahiroBA2, mahiroBA3]}
-        alt={"saori izawa"}
-        character={"mahiro"}
-        actor={"Saori Izawa"}
-        blurb={`Izawa Saori is a Japanese stuntwoman who began to work as an actress in 2021 with "The Janitor" being her first major appearance. She's done stunt work for "RE:BORN" (2016), "KINGDOM" (2019), "Rurouni Kenshin: The Beginning" (2021), and "Rurouni Kenshin: The Final" (2021).`}
-        selection={props.selection}
-        showSocials={true}
-        display={["movie1", "movie2", "movie3"]}
-      />
+      <Element name="firstCard">
+        <CastCard
+          flexDirection={"lg:flex-row"}
+          justifyIMG={"lg:justify-end"}
+          src={[mahiro, mahiroBA2, mahiroBA3]}
+          alt={"saori izawa"}
+          character={"mahiro"}
+          actor={"Saori Izawa"}
+          blurb={`Izawa Saori is a Japanese stuntwoman who began to work as an actress in 2021 with "The Janitor" being her first major appearance. She's done stunt work for "RE:BORN" (2016), "KINGDOM" (2019), "Rurouni Kenshin: The Beginning" (2021), and "Rurouni Kenshin: The Final" (2021).`}
+          selection={props.selection}
+          showSocials={true}
+          display={["movie1", "movie2", "movie3"]}
+        />
+      </Element>
 
       <CastCard
         flexDirection={"lg:flex-row-reverse"}
@@ -194,6 +219,19 @@ const CastPage = (props) => {
       />
 
       <WatchNowCard />
+
+      <Link
+        to="firstCard"
+        smooth={true}
+        offset={-100}
+        className={`z-99 fixed bottom-10 cursor-pointer ${
+          isVisible ? "block" : "hidden"
+        } `}
+      >
+        <div>
+          <ScrollToTop />
+        </div>
+      </Link>
     </>
   );
 };
