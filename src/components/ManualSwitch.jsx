@@ -1,9 +1,6 @@
-// import React, { useState } from "react";
-// import ba1 from "../assets/ba1.png";
-// import ba2 from "../assets/ba2.png";
-// import ba3 from "../assets/ba3.png";
-
 const ManualSwitch = (props) => {
+  // originally had moviesOBJ here but had to move to a higher level
+
   // const moviesObj = [
   //   {
   //     src: ba1,
