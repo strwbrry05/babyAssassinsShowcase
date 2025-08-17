@@ -5,7 +5,10 @@ import { nanoid } from "nanoid";
 import { Link } from "react-router";
 
 const CastCard = (props) => {
+  // iteratre through movieObj
   return props.selection.map((selected, index) => {
+    // find the active one and compare the title with the incoming data
+    // (as in: is the cast card going to be displayed or not)
     if (selected.active && selected.title === props.display[index]) {
       return (
         <div
@@ -19,6 +22,8 @@ const CastCard = (props) => {
             className={`w-[85%] lg:w-[50%] lg:flex lg:justify-end ${props.justifyIMG}
       md:flex md:justify-center`}
           >
+            {/* displayed different image according to movie
+            (only applicable to main characters) */}
             {props.selection.map((selected, index) => {
               if (selected.active === true) {
                 return (
@@ -51,6 +56,7 @@ const CastCard = (props) => {
               <p className="lg:text-[1.5rem]">played by {props.actor}</p>
             </div>
             <p className="xl:text-[1.15rem]">{props.blurb}</p>
+            {/* if showSocials is true, display available socials */}
             {props.showSocials ? (
               <div className="flex gap-x-[10px] mt-[0.5em] text-[2rem]">
                 {props.insta && (
@@ -65,6 +71,7 @@ const CastCard = (props) => {
                 )}
               </div>
             ) : (
+              // when showSocials is false, (home page) display 'show more' button
               <Link to="/cast">
                 <button
                   className="bg-(--color-title-red) w-[100px] h-[35px] 
