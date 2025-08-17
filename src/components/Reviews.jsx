@@ -45,6 +45,7 @@ import BA3_review9 from "../assets/reviews/BA3/BA3_review9.png";
 import BA3_review10 from "../assets/reviews/BA3/BA3_review10.png";
 
 const Reviews = (props) => {
+  // all reviews arrays
   const reviews_BA1 = [
     BA1_review1,
     BA1_review2,
@@ -91,6 +92,7 @@ const Reviews = (props) => {
     BA3_review10,
   ];
 
+  // all three arrays to display according to movie 'selection'
   const reviewsArr = [reviews_BA1, reviews_BA2, reviews_BA3];
 
   const settings = {
