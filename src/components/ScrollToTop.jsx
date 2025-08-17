@@ -1,6 +1,8 @@
 import React from "react";
 import { BiSolidUpArrow } from "react-icons/bi";
 
+// scroll to top element that physically appears on screen
+// in the shape of an arrow
 const ScrollToTop = () => {
   return (
     <div
