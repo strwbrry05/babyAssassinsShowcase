@@ -15,7 +15,7 @@ const Footer = () => {
 
         <div className="flex m-auto justify-center ">
           <div className="bg-(--color-title-red) p-[0.75em] mr-[1em] rounded-[5px] cursor-pointer">
-            <a href={import.meta.env.VITE_GITHUB_LINK} target="_blank">
+            <a href="https://github.com/strwbrry05" target="_blank">
               <LuGithub className="text-[1.75em]" />
             </a>
           </div>
