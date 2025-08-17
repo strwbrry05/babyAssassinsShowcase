@@ -43,6 +43,7 @@ import { IoDownloadOutline } from "react-icons/io5";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 
 const Gallery = () => {
+  // all available images
   const imgArr = [
     {
       src: BA1_img1,
@@ -195,8 +196,10 @@ const Gallery = () => {
   ];
 
   const [images, setImages] = useState(shuffleArr(imgArr));
+  // showImage state is meant for 'selecting' an image to see it larger
   const [showImage, setShowImage] = useState([false, null]);
 
+  // shuffle images at the start (all movies)
   function shuffleArr(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -210,7 +213,9 @@ const Gallery = () => {
     setShowImage([true, name]);
   }
 
+  // filter according to which movie images user wants to see
   function filterIMG(filterValue) {
+    // filterValue dictates outcome Arr
     setImages(imgArr.filter((img) => img.category.includes(filterValue)));
     console.log(filterValue);
   }
@@ -227,6 +232,7 @@ const Gallery = () => {
       >
         <p className="mb-[1em]">click on an image to enlarge or download</p>
 
+        {/* form needed for Select component */}
         <form onChange={(e) => filterIMG(e.target.value)}>
           <label htmlFor="galleryFilter" className="mr-[0.5em]">
             filter:
@@ -265,6 +271,7 @@ const Gallery = () => {
                 <IoDownloadOutline className="text-[1.5rem] hover:text-[1.75rem] " />
               </a>
 
+              {/* trigger 'selectIMG' function if any image is clicked on */}
               <img
                 src={image.src}
                 alt=""
@@ -278,7 +285,10 @@ const Gallery = () => {
           );
         })}
       </div>
+
+      {/* when showImage[0] (boolean) state is true -> display this */}
       {showImage[0] && (
+        // take over the entire screen
         <div className="z-6 fixed top-0 size-full bg-(--color-black) flex flex-col justify-center items-center overflow-y-hidden">
           <button className="cursor-pointer w-[320px] md:w-[500px] mb-[0.5em]">
             <IoMdCloseCircleOutline
@@ -286,6 +296,7 @@ const Gallery = () => {
               onClick={() => setShowImage([false, null])}
             />
           </button>
+          {/* image is grabbed from state showImage(1) */}
           <img
             src={showImage[1]}
             alt=""
