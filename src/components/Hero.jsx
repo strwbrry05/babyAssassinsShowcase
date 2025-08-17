@@ -5,6 +5,7 @@ import heroBA3 from "../assets/hero_BA3.png";
 import { nanoid } from "nanoid";
 
 const Hero = (props) => {
+  // heroArr dictates colors and image to be displayed
   const heroArr = [
     {
       src: heroBA1,
@@ -27,7 +28,9 @@ const Hero = (props) => {
     },
   ];
 
+  // if hero img changes, toggle a change for the entire site using the toggleSelection function from APP.jsx
   function toggleEverything(index) {
+    // create a loop since its by click
     if (index === 2) {
       props.toggleSelection(props.selection[0].title);
     } else {
@@ -35,6 +38,7 @@ const Hero = (props) => {
     }
   }
 
+  // utilize selection prop to know which inedx to use for the heroArr (since they are parallels)
   return props.selection.map((selected, index) => {
     if (selected.active === true) {
       return (
@@ -56,6 +60,7 @@ const Hero = (props) => {
 
       sm:h-[300px] md:h-[350px] lg:max-w-[1100px] lg:h-[275px]"
           >
+            {/* if title is selected, toggleEverything */}
             <div
               className="h-full flex justify-center items-center
         flex-col cursor-pointer hover:scale-102 
