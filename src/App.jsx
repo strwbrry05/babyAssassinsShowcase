@@ -14,6 +14,7 @@ import WatchPage from "./Pages/WatchPage";
 import AutoScrollToTop from "./components/AutoScrollToTop";
 
 function App() {
+  // moviesOBJ controlls the entire page
   const moviesObj = [
     {
       src: ba1,
@@ -35,8 +36,10 @@ function App() {
     },
   ];
 
+  // useState changes the 'movie' view for the user (taken from moviesObj)
   const [selection, setSelection] = useState(moviesObj);
 
+  // changes movie selection when toggled
   function toggleSelection(title) {
     setSelection(
       selection.map((selected) => {
