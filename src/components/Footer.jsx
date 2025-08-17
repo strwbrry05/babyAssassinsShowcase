@@ -20,7 +20,7 @@ const Footer = () => {
             </a>
           </div>
           <div className="bg-(--color-title-red) p-[0.75em] mr-[1em] rounded-[5px] cursor-pointer">
-            <a href={import.meta.env.VITE_LINKEDIN_LINK} target="_blank">
+            <a href="https://www.linkedin.com/in/molinajq19/" target="_blank">
               <LuLinkedin className="text-[1.75em]" />
             </a>
           </div>

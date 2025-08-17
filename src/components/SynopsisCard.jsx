@@ -8,7 +8,7 @@ const SynopsisCard = (props) => {
       title: "movie1",
       summary:
         "Upon graduation, highly trained teenage assassins Chisato and Mahiro are informed by upper management that they will need to hold down “normal” jobs as a cover, and—even worse—they’ll be forced to share an apartment. However, after an unfortunate run-in with a Yakuza member, the two must band together to survive an epic fight for their lives.",
-      apiCall: "http://www.omdbapi.com/?t=baby+assassins",
+      apiCall: "https://www.omdbapi.com/?t=baby+assassins",
       youtubeSrc:
         "https://www.youtube.com/embed/BXTWQxqdKo8?si=GqNzj46_GsLgzMMC",
       websiteSrc: "https://babywalkure.com/bw01/",
@@ -20,7 +20,7 @@ const SynopsisCard = (props) => {
       title: "movie1",
       summary:
         "Chisato and Mahiro were banned from performing tasks because they violated the organization's rules?! Needing money to make ends meet, they resumed their days as part time workers. The two are busy working to earn money, but they suddenly encounter other assassins who are after them. What should they do if they can't reveal their identity as assassins when they are not on duty?",
-      apiCall: "http://www.omdbapi.com/?t=baby+assassins%3A+2+babies",
+      apiCall: "https://www.omdbapi.com/?t=baby+assassins%3A+2+babies",
       youtubeSrc:
         "https://www.youtube.com/embed/rvMR90x3T3w?si=87LU5aza6hosI9Qn",
       websiteSrc: "https://babywalkure.com/",
@@ -32,7 +32,7 @@ const SynopsisCard = (props) => {
       title: "movie1",
       summary:
         "Teen assassins and BFFs, Chisato and Mahiro head to a coastal resort for a well-deserved vacation when The Agency calls with an assignment -- take out an embezzler. Unfortunately, the gig has been double-booked, and the duo cross paths with an unpredictably vicious freelancer out to add to his personal kill count. What should have been a straightforward mission becomes a test of their friendship and killing skills, as the ruthless killer targets the two young roomies.",
-      apiCall: "http://www.omdbapi.com/?t=baby+assassins%3A+nice+days",
+      apiCall: "https://www.omdbapi.com/?t=baby+assassins%3A+nice+days",
       youtubeSrc:
         "https://www.youtube.com/embed/gKGRaNzLt8M?si=XkLcuz1b0gswdZgK",
       websiteSrc: "https://babywalkure-nicedays.com/",
