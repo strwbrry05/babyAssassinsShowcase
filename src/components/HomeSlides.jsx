@@ -58,6 +58,7 @@ const HomeSlides = (props) => {
   const [showNumber, setShowNumber] = useState(1);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
 
+  // resize slider according to window size
   useEffect(() => {
     function handleResize() {
       setWindowSize(window.innerWidth);
