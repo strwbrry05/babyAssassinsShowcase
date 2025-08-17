@@ -13,6 +13,7 @@ const Footer = () => {
       <div className="m-auto text-center md:pl-[2em] md:m-[0em] lg:ml-[3em]">
         <p className="text-[2.25rem] font-bold">STRWBRRY05</p>
 
+        {/* LINKS to SOCIALS (github/linkedin/portoflio) */}
         <div className="flex m-auto justify-center ">
           <div className="bg-(--color-title-red) p-[0.75em] mr-[1em] rounded-[5px] cursor-pointer">
             <a href="https://github.com/strwbrry05" target="_blank">
@@ -24,6 +25,7 @@ const Footer = () => {
               <LuLinkedin className="text-[1.75em]" />
             </a>
           </div>
+          {/* link portfolio here once complete!! */}
           <div className="bg-(--color-title-red) p-[0.75em] rounded-[5px] cursor-pointer">
             <FaRegHeart className="text-[1.75em]" />
           </div>

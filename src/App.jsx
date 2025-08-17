@@ -55,7 +55,9 @@ function App() {
 
   return (
     <>
+      {/* function that allows site to go to the top when switching between nav options */}
       <AutoScrollToTop />
+      {/* FOUR pages with ONE layout */}
       <Routes>
         <Route element={<MainLayout selection={selection} />}>
           <Route
