@@ -5,8 +5,10 @@ import { NavLink } from "react-router";
 import { Link } from "react-scroll";
 
 const Navigation = (props) => {
+  // triggers mobile view
   const [mobileActive, setMobileActive] = useState(false);
   const [windowSize, setWindowSize] = useState(window.innerWidth);
+  // helps determine when to automatically close, (if user clicks outside of the nav menu)
   const hitbox = useRef(null);
 
   const babyColors = [
@@ -51,6 +53,7 @@ const Navigation = (props) => {
     };
   }, [hitbox, mobileActive]);
 
+  // if title is clicked, scroll to top
   function handleTitleClick() {
     window.scrollTo(0, 0);
     setMobileActive(false);
@@ -64,6 +67,7 @@ const Navigation = (props) => {
     flex justify-center items-center"
       >
         <div className="z-5 flex items-center justify-center gap-x-[20px]">
+          {/* trigger animation of dropdown ICON */}
           <MdMenuOpen
             className={`text-(--color-white) text-[2.5rem] rotate-90 cursor-pointer
             ${
@@ -150,6 +154,7 @@ const Navigation = (props) => {
         </div>
       </div>
 
+      {/* mobile menu drop down */}
       <div
         ref={hitbox}
         className={`bg-(--color-black) text-(--color-white) font-(family-name:--font-titles) uppercase
