@@ -3,6 +3,7 @@ import axios from "axios";
 import { IoMdCloseCircleOutline } from "react-icons/io";
 
 const SynopsisCard = (props) => {
+  // data to be displayed or called
   const synopsisArr = [
     {
       title: "movie1",
@@ -48,6 +49,7 @@ const SynopsisCard = (props) => {
 
   const [apiCall, setApiCall] = useState(synopsisArr[0].apiCall);
 
+  // change the apiCall according to the selected movie
   useEffect(() => {
     props.selection.map((selected, index) => {
       if (selected.active === true) {
@@ -55,8 +57,10 @@ const SynopsisCard = (props) => {
       }
     });
 
+    // fetch data from OMDB database using axios
     const fetchData = async () => {
       try {
+        // use environment var to hide API key
         const res = await axios.get(
           `${apiCall}&apikey=${import.meta.env.VITE_OMDB_API_KEY}`
         );
@@ -71,12 +75,14 @@ const SynopsisCard = (props) => {
     fetchData();
   }, [props.selection, apiCall, data]);
 
+  // showTrailer has similar functionality to showImage from Gallery.jsx
   const [showTrailer, setShowTrailer] = useState([false, null]);
 
   function selectTrailer(video) {
     setShowTrailer([true, video]);
   }
 
+  // if error fetching data show error div (maybe fix in future)
   if (error) return <div>error fetching data! check again soon!</div>;
 
   return props.selection.map((selected, index) => {
@@ -93,6 +99,7 @@ const SynopsisCard = (props) => {
           <div className="md:max-w-[600px]">
             <p className="text-[1.15rem]">{synopsisArr[index].summary}</p>
             <div className="flex justify-between items-center mb-[2em] mt-[2em]">
+              {/* if data takes time to load, display loading component */}
               {loading ? (
                 <>
                   <div>Loading...</div>
@@ -149,6 +156,7 @@ const SynopsisCard = (props) => {
             </a>
           </div>
 
+          {/* show trailer functionality similar to the showImage functionality in Gallery.jsx */}
           {showTrailer[0] && (
             <div className="z-6 fixed top-[0px] left-[-0.5px] size-full bg-(--color-black) flex flex-col justify-center items-center overflow-y-hidden">
               <div className="flex justify-between items-center w-[350px] sm:w-[500px] md:w-[600px] mb-[0.5em]">
