@@ -30,12 +30,13 @@ import chisatoBA2 from "../assets/cast/chisatoBA2.png";
 import chisatoBA3 from "../assets/cast/chisatoBA3.png";
 
 const CastPage = (props) => {
+  // state controls the viibility of the scroll to top button/element
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       console.log(window.scrollY);
-
+      // if the user scrolls past a certain point, scrollToTop functionality becomes available
       if (window.scrollY > 700) {
         setIsVisible(true);
       } else {
@@ -237,6 +238,7 @@ const CastPage = (props) => {
 
       <WatchNowCard />
 
+      {/* if selected, scrolls to first element on page */}
       <Link
         to="firstCard"
         smooth={true}

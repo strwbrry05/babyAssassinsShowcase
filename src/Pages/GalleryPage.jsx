@@ -6,12 +6,13 @@ import Gallery from "../components/Gallery.jsx";
 import WatchNowCard from "../components/WatchNowCard.jsx";
 
 const GalleryPage = () => {
+  // state controls the viibility of the scroll to top button/element
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       console.log(window.scrollY);
-
+      // if the user scrolls past a certain point, scrollToTop functionality becomes available
       if (window.scrollY > 700) {
         setIsVisible(true);
       } else {

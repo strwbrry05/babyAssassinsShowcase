@@ -19,12 +19,13 @@ import chisatoBA2 from "../assets/cast/chisatoBA2.png";
 import chisatoBA3 from "../assets/cast/chisatoBA3.png";
 
 const HomePage = (props) => {
+  // state controls the viibility of the scroll to top button/element
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       console.log(window.scrollY);
-
+      // if the user scrolls past a certain point, scrollToTop functionality becomes available
       if (window.scrollY > 700) {
         setIsVisible(true);
       } else {
@@ -42,6 +43,7 @@ const HomePage = (props) => {
   return (
     <>
       <Element name="hero">
+        {/* if hero is pressed, movie selection is changed, thats why toggleSelection is passed */}
         <Hero
           selection={props.selection}
           toggleSelection={props.toggleSelection}
@@ -50,6 +52,7 @@ const HomePage = (props) => {
 
       <SynopsisCard selection={props.selection} />
 
+      {/* showSocials prop is false here because it links to the cast page instead */}
       <CastCard
         flexDirection={"lg:flex-row"}
         justifyIMG={"lg:justify-end"}
