@@ -92,10 +92,13 @@ Designed desktop first, developed mobile first. Web app is responsive to all typ
 </span>
 
 ## Potential Improvements
-- NAV: hovering change
-- HERO: more animated change (a note that says click me?)
-- REVIEWS: same size window despite changing slides.
-- On reload: stay with the same (cookies) remember local storage?
+- NAV: When hovering over the nav components, I'd like if the other unselected components were to light up or change color. I find that this type of navigation bar allows users to feel more drawn to clicking on the various pages if they feel like they're being invited to.
+
+- HERO: If the user decides to switch views between movies by clicking on the title on the hero, I would like for the change animation to be smoother and different. Ideally, the image and name change would work like a rotating platform. Sort of like an old projector that has to flip between slides. The new content would rotate and the old would rotate out, creating a seamless transition between alternating views.
+
+- REVIEWS: As the slides change between reviews, the amount of space the reviews section takes up alternates depending on how large the review images are. My fix would be to have the section take up a set amount of space regardless of how large the images are, maintaining a more professional look for the page.
+  
+- On reload: A fun idea would be to incorporate session storage or cookies to maintain the current selected view on each manual refresh. When selecting a view and moving through the pages, the selected movie information stays the same, but if a user were to manually reload the page themselves, the page would revert back to the first movie. Prompting the user to then have to manually select their desired choice once again. If the app remembered which selection the user was currently on, manually refreshing would have no effect on thier choice. Only on each initial session load would the page display the first movie view.
 
 ## Built Using
 - HTML
