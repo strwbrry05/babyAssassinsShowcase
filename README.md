@@ -1,5 +1,5 @@
 # baby assassins showcase
-[2025] Extremely creative React web app showcasing the Japanese movie trilogy - Baby Assasins. With three different views in one website, one per film, the user will find themselves shocked at how many features this site contains. Web app includes a call to the OMDB api, various slideshows, selectable viewing options, gallery filters, in-page movie trailers, etc.
+[2025] Extremely creative React web app showcasing the Japanese movie trilogy - Baby Assassins. With three different views in one website, one per film, the user will find themselves shocked at how many features this site contains. Web app includes a call to the OMDB api, various slideshows, selectable viewing options, gallery filters, in-page movie trailers, etc.
 
 ![Home](ba_files/projectBA1.gif)
 ![Home](ba_files/projectBA2.gif)
