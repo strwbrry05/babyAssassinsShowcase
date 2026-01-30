@@ -1,11 +1,13 @@
 # baby assassins showcase
-[2025]
+[2025] Extremely creative React web app showcasing the Japanese movie trilogy - Baby Assasins. With three different views in one website, one per film, the user will find themselves shocked at how many features this site contains. Web app includes a call to the OMDB api, various slideshows, selectable viewing options, gallery filters, in-page movie trailers, etc.
 
 ![Home](ba_files/projectBA1.gif)
 ![Home](ba_files/projectBA2.gif)
 ![Home](ba_files/projectBA3.gif)
 
 ## About the Project
+Accomplishing a feat like this page was incredible for me; I had never thought I'd be able to create something as complex as this. The Baby Assassins films are so so special to me choosing just one to showcase would have been my personal hell. Fortunately, I had come up with this design for something different but decided to implement it on this project. Creating small, fun features is always a great time. I find that focusing on getting the small things right, makes the larger picture look even better.
+
 ### Home Page
 Webpage contains three different possible views. Sort of like a day and night mode. Here, the user can switch between the three films in the franchise and explore all of that respective films information. Below are each of the distinct home pages. Thematically aligned with each film.
 
@@ -29,7 +31,7 @@ A movie is not complete without a director's influence. Here, a user is able to 
 
 <img src="ba_files/about_director.png" width="650"/>
 
-As previously mentioned.
+As previously mentioned, this web app contains three different viewable modes, each pertaining to a specific film. The first method to change the viewing mode is through clicking the title of the film on the hero. Which is quite subtle. The second method to change veiws is to select a film from the selection section located on the home page and on the cast page. Here, a user is able to directly select which film they wish to focus on.
 
 <img src="ba_files/about_selection.png" width="650"/>
 <img src="ba_files/about_selection_2.png" width="650"/>
@@ -90,6 +92,10 @@ Designed desktop first, developed mobile first. Web app is responsive to all typ
 </span>
 
 ## Potential Improvements
+- NAV: hovering change
+- HERO: more animated change (a note that says click me?)
+- REVIEWS: same size window despite changing slides.
+- On reload: stay with the same (cookies) remember local storage?
 
 ## Built Using
 - HTML
